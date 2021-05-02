@@ -1,7 +1,7 @@
 import React from "react";
 
 import ListTabContent from "./list_tab_content";
-import TabWrapper from "./tab_wrapper.js";
+import TabWrapper from "./tab_wrapper";
 
 class App extends React.Component {
   constructor(props) {
@@ -34,9 +34,9 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <React.Fragment>
         <TabWrapper tabs={this.state.tabs} />
-      </div>
+      </React.Fragment>
     );
   }
 }

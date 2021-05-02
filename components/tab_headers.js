@@ -1,10 +1,17 @@
 import React from "react";
 
-const TabHeaders = ({ tabs, click_action }) => {
+import styles from "../styles/tab.module.css";
+
+const TabHeaders = ({ tabs, click_action, active_tab_id }) => {
   return (
-    <div>
+    <div className={styles.tab_headers_wrapper}>
       {tabs.map((tab) => (
         <div
+          className={
+            tab.id == active_tab_id
+              ? styles.tab_header_active
+              : styles.tab_header
+          }
           key={`renderTabHeadersElement${tab.id}`}
           onClick={() => click_action(tab.id)}
         >

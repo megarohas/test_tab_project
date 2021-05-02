@@ -11,6 +11,7 @@ class ListTabContent extends React.Component {
     this.handleAdd = this.handleAdd.bind(this);
     this.handleRemove = this.handleRemove.bind(this);
   }
+
   handleAdd() {
     this.setState({ list: [...this.state.list, getRandomString()] });
   }
@@ -21,13 +22,13 @@ class ListTabContent extends React.Component {
 
   render() {
     return (
-      <div>
+      <React.Fragment>
         <List list={this.state.list} />
         <ListButtons
           add_action={this.handleAdd}
           remove_action={this.handleRemove}
         />
-      </div>
+      </React.Fragment>
     );
   }
 }

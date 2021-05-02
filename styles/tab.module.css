@@ -1,0 +1,33 @@
+.tab_headers_wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  border: 1px solid black;
+}
+
+.tab_header,
+.tab_header_active {
+  width: 100%;
+  cursor: pointer;
+  padding: 10px;
+  border-right: 1px solid black;
+}
+
+.tab_header:hover,
+.tab_header_active {
+  box-shadow: inset 0px 0px 100px rgba(0, 0, 0, 0.5);
+  color: white;
+}
+.tab_header:last-child {
+  border: none;
+}
+
+.tab_wrapper_body {
+  width: 100%;
+  padding: 20px;
+  /* background-color: pink; */
+}

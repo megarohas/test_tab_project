@@ -1,7 +1,7 @@
 import React from "react";
 
 const TabContent = ({ tab }) => {
-  return <div>{tab.content}</div>;
+  return <React.Fragment>{tab.content}</React.Fragment>;
 };
 
 export default TabContent;
