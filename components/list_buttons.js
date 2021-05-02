@@ -1,23 +1,42 @@
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
 import React from "react";
 
 import { debounce } from "../helpers/helpers";
-
+import { incrementList, decrementList } from "../actions.js";
 import styles from "../styles/list.module.css";
 
-const ListButtons = ({ add_action, remove_action }) => {
-  return (
-    <div className={styles.list_button_wrapper}>
-      <button
-        className={styles.list_button}
-        onClick={debounce(add_action, 5000)}
-      >
-        Add
-      </button>
-      <button className={styles.list_button} onClick={remove_action}>
-        Remove
-      </button>
-    </div>
-  );
+class ListButtons extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  render() {
+    let { incrementList, decrementList } = this.props;
+    return (
+      <div className={styles.list_button_wrapper}>
+        <button
+          className={styles.list_button}
+          onClick={debounce(incrementList, 5000)}
+        >
+          Add
+        </button>
+        <button className={styles.list_button} onClick={decrementList}>
+          Remove
+        </button>
+      </div>
+    );
+  }
+}
+
+const mapStateToProps = (store) => {
+  return {};
 };
 
-export default ListButtons;
+const mapDispatchToProps = (dispatch) => ({
+  incrementList: bindActionCreators(incrementList, dispatch),
+  decrementList: bindActionCreators(decrementList, dispatch),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ListButtons);
