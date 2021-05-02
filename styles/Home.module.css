@@ -15,7 +15,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: green;
+  background-color: #ffff00;
 }
 .footer {
   width: 100%;
@@ -24,17 +24,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: yellow;
+  background-color: #2aff34;
 }
 
-.logo {
-  height: 1em;
-  margin-left: 0.5rem;
+/* phones */
+@media only screen and (max-width: 600px) {
+  .header {
+    background-color: #ffff9e;
+  }
+  .footer {
+    background-color: #ffc0cb;
+  }
 }
 
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
+/* tablets */
+@media only screen and (max-width: 1000px) {
+  .header {
+    background-color: #ffff9e;
   }
 }
