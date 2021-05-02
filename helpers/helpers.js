@@ -21,16 +21,18 @@ export function removeRandomItem(array) {
   return [...result_array];
 }
 
-var waiting = false;
+//debounce block below
 
-export function debounce(callback, limit) {
+let debounce_waiting_flag = false;
+
+export function debounce(callback, timeout) {
   return function () {
-    if (!waiting) {
-      callback.apply(this, arguments);
-      waiting = true;
+    if (!debounce_waiting_flag) {
+      callback();
+      debounce_waiting_flag = true;
       setTimeout(function () {
-        waiting = false;
-      }, limit);
+        debounce_waiting_flag = false;
+      }, timeout);
     }
   };
 }
