@@ -2,13 +2,12 @@ import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import React from "react";
 
-import { getTabsData } from "../actions";
-import TabWrapper from "./tab_wrapper";
+import { getTabsData } from "../redux_tools/actions";
+import TabsWrapper from "./tabs_wrapper";
 
 class App extends React.Component {
   constructor(props) {
-    super(props);
-    this.state = {};
+    super();
   }
 
   componentDidMount() {
@@ -18,7 +17,7 @@ class App extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <TabWrapper />
+        <TabsWrapper />
       </React.Fragment>
     );
   }
@@ -28,4 +27,6 @@ const mapDispatchToProps = (dispatch) => ({
   getTabsData: bindActionCreators(getTabsData, dispatch),
 });
 
-export default connect(() => {}, mapDispatchToProps)(App);
+export default connect(() => {
+  return {};
+}, mapDispatchToProps)(App);

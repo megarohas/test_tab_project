@@ -3,7 +3,7 @@ import { createStore, applyMiddleware } from "redux";
 import { useMemo } from "react";
 import thunk from "redux-thunk";
 
-import { getRandomString, removeRandomItem } from "./helpers/helpers";
+import { getRandomString, removeRandomItem } from "../helpers/helpers";
 
 let store;
 

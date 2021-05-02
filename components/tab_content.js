@@ -1,17 +1,16 @@
 import { connect } from "react-redux";
 import React from "react";
 
-import ListTabContent from "./list_tab_content";
+import ListWrapper from "./list_wrapper";
 
 class TabContent extends React.Component {
   constructor(props) {
-    super(props);
-    this.state = {};
+    super();
   }
 
   render() {
     let { tab } = this.props;
-    if (tab.type == "custom") return <ListTabContent />;
+    if (tab.type == "custom") return <ListWrapper />;
     return <React.Fragment>{tab.content}</React.Fragment>;
   }
 }
@@ -24,4 +23,6 @@ const mapStateToProps = (store) => {
   };
 };
 
-export default connect(mapStateToProps, () => {})(TabContent);
+export default connect(mapStateToProps, () => {
+  return {};
+})(TabContent);

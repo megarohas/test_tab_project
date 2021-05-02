@@ -20,10 +20,9 @@ export function decrementList(id) {
 export function getTabsData() {
   return (dispatch) => {
     axios.get("/api/tabs").then((response) => {
-      console.log("/api/tabs", response);
       dispatch({
         type: "SET_TABS",
-        payload: response && response.data && response.data.tabs,
+        payload: (response && response.data && response.data.tabs) || [],
       });
     });
   };

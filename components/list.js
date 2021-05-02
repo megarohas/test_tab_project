@@ -5,9 +5,9 @@ import styles from "../styles/list.module.css";
 
 class List extends React.Component {
   constructor(props) {
-    super(props);
-    this.state = {};
+    super();
   }
+
   render() {
     let { list } = this.props;
     if (list.length == 0)
@@ -30,4 +30,6 @@ const mapStateToProps = (store) => {
   };
 };
 
-export default connect(mapStateToProps, () => {})(List);
+export default connect(mapStateToProps, () => {
+  return {};
+})(List);
