@@ -1,3 +1,8 @@
+.tabs_wrapper_body {
+  width: 100%;
+  padding: 20px;
+}
+
 .tabs_headers_wrapper {
   width: 100%;
   display: flex;
@@ -22,11 +27,7 @@
   box-shadow: inset 0px 0px 100px rgba(0, 0, 0, 0.5);
   color: white;
 }
+
 .tab_header:last-child {
   border: none;
-}
-
-.tabs_wrapper_body {
-  width: 100%;
-  padding: 20px;
 }

@@ -1,15 +1,12 @@
-.list_button_wrapper {
-  padding: 10px 0px 10px 0px;
-}
-
-.list_button {
-  margin-right: 10px;
-  height: 30px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
 .list_wrapper {
+  margin-bottom: 10px;
+}
+
+.list_no_content {
+  padding: 5px;
+  font-weight: bold;
+  color: black;
+  opacity: 0.5;
   margin-bottom: 10px;
 }
 
@@ -21,14 +18,18 @@
   border-radius: 10px;
   margin-bottom: 10px;
 }
-.list_no_content {
-  padding: 5px;
-  font-weight: bold;
-  color: black;
-  opacity: 0.5;
-  margin-bottom: 10px;
-}
 
 .list_item:last-child {
   margin-bottom: none;
+}
+
+.list_button_wrapper {
+  padding: 10px 0px 10px 0px;
+}
+
+.list_button {
+  margin-right: 10px;
+  height: 30px;
+  cursor: pointer;
+  font-weight: bold;
 }
