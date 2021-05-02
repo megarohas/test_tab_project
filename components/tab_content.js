@@ -24,6 +24,4 @@ const mapStateToProps = (store) => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => ({});
-
-export default connect(mapStateToProps, mapDispatchToProps)(TabContent);
+export default connect(mapStateToProps, () => {})(TabContent);

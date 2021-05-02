@@ -21,10 +21,7 @@ class TabWrapper extends React.Component {
   }
 }
 
-const mapStateToProps = (store) => {
-  return {};
-};
-
-const mapDispatchToProps = (dispatch) => ({});
-
-export default connect(mapStateToProps, mapDispatchToProps)(TabWrapper);
+export default connect(
+  () => {},
+  () => {}
+)(TabWrapper);

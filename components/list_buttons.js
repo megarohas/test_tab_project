@@ -30,13 +30,9 @@ class ListButtons extends React.Component {
   }
 }
 
-const mapStateToProps = (store) => {
-  return {};
-};
-
 const mapDispatchToProps = (dispatch) => ({
   incrementList: bindActionCreators(incrementList, dispatch),
   decrementList: bindActionCreators(decrementList, dispatch),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ListButtons);
+export default connect(() => {}, mapDispatchToProps)(ListButtons);

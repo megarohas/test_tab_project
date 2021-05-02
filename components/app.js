@@ -24,12 +24,8 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = (store) => {
-  return {};
-};
-
 const mapDispatchToProps = (dispatch) => ({
   getTabsData: bindActionCreators(getTabsData, dispatch),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(() => {}, mapDispatchToProps)(App);
