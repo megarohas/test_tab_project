@@ -19,6 +19,7 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         tabs: action.payload,
+        active_tab_id: (action.payload || [{ id: 0 }])[0].id,
       };
     case "SET_ACTIVE_TAB_ID":
       return {
