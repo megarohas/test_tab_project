@@ -1,6 +1,8 @@
 import React from "react";
 
 import { getRandomString, removeRandomItem } from "../helpers/helpers";
+import List from "./list";
+import ListButtons from "./list_buttons";
 
 class ListTabContent extends React.Component {
   constructor(props) {
@@ -17,29 +19,14 @@ class ListTabContent extends React.Component {
     this.setState({ list: removeRandomItem(this.state.list) });
   }
 
-  renderList() {
-    return (
-      <div>
-        {this.state.list.map((item, index) => (
-          <div key={`renderListElement${index}`}>{item}</div>
-        ))}
-      </div>
-    );
-  }
-  renderButtons() {
-    return (
-      <div>
-        <button onClick={this.handleAdd}>Add</button>
-        <button onClick={this.handleRemove}>Remove</button>
-      </div>
-    );
-  }
-
   render() {
     return (
       <div>
-        {this.renderList()}
-        {this.renderButtons()}
+        <List list={this.state.list} />
+        <ListButtons
+          add_action={this.handleAdd}
+          remove_action={this.handleRemove}
+        />
       </div>
     );
   }

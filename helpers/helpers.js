@@ -15,3 +15,17 @@ export function removeRandomItem(array) {
   }
   return [...result_array];
 }
+
+var waiting = false;
+
+export function debounce(callback, limit) {
+  return function () {
+    if (!waiting) {
+      callback.apply(this, arguments);
+      waiting = true;
+      setTimeout(function () {
+        waiting = false;
+      }, limit);
+    }
+  };
+}
